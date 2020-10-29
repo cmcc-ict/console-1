@@ -4,9 +4,8 @@ on:
   push:
     # Publish `master` as Docker `latest` image.
     branches:
-      - master
-      - dev
-      - release-*
+      - custom-master
+      - custom-release-*
 
     # Publish `v1.2.3` tags as releases.
     tags:
@@ -17,15 +16,16 @@ on:
 
 env:
   IMAGE_NAME: ks-console
-  DOCKERHUB_REPO: kubespheredev
+  DOCKERHUB_REPO: evlon
+  TZ: Asia/Shanghai  # 设置时区
 
 jobs:
   build-and-push:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [10.13]
 
     steps:
     - uses: actions/checkout@v1
@@ -43,18 +43,16 @@ jobs:
 
     - name: Test
       run: yarn test
-
+    
     - name: Build image
       if: github.event_name == 'push'
       run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-    - name: Docker login
+    
+    - name: Login to DockerHub
       if: github.event_name == 'push'
-      uses: azure/docker-login@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
+      run: |
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+ 
     - name: Push image
       if: github.event_name == 'push'
       run: |
@@ -65,7 +63,6 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention
           [ "$VERSION" == "master" ] && VERSION=latest
-          [ "$VERSION" == "dev" ] && VERSION=dev
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
