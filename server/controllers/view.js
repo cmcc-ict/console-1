@@ -143,6 +143,7 @@ const renderCaptcha = async ctx => {
 module.exports = {
   renderView,
   renderLogin,
+  renderLoginByOAuth,
   renderMarkdown,
   renderCaptcha,
 }
