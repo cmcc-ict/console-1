@@ -12,10 +12,7 @@
   </head>
   <body>
     <% if (defaultOauthServer) { %> 
-      <div id="login-oauth" data-url="<%= defaultOauthServer.url %>">
-        <span><%= t('Log In with %s', defaultOauthServer.title) %></span>
-      </div>
-      <script>location.replace(document.getElementById('login-oauth').getAttribute('data-url'))</script>
+      <script>location.replace('<%- defaultOauthServer.url %>')</script>
     <%} else {%>
       <strong>没有配置认证服务</strong>
     <%}%>
