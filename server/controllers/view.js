@@ -110,7 +110,7 @@ const renderLoginByOAuth = async ctx => {
 
   const oauthServers = await getOAuthInfo(ctx)
 
-  await ctx.render('login', {
+  await ctx.render('login_by_oauth', {
     loginPath,
     oauthServers: oauthServers || [],
     defaultOauthServer : oauthServers.length > 0? oauthServers[0] : null,
