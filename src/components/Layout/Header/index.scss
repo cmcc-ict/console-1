@@ -39,12 +39,14 @@
 }
 
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
+  //position: absolute;
+  //top: 50%;
+  //left: 50%;
+  //width: 150px;
   height: 30px;
-  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  padding-left: 10px;
+  //transform: translate(-50%, -50%);
 
   .inAppsPage & {
     color: white;
@@ -53,7 +55,7 @@
 
 .navs {
   display: inline-block;
-  padding: 18px 20px;
+  padding: 9px 20px;
 
   button {
     padding: 5px 11px !important;
