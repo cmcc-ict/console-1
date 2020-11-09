@@ -63,16 +63,19 @@
     & + button {
       margin-left: 12px !important;
     }
-    .content{
-      color: $light-color01 !important;
-    }
-
     .inAppsPage & {
       color: white;
 
       &:hover {
         color: $text-color;
       }
+    }
+  }
+
+
+  .button{
+    .content{
+      color: #f9fbfd !important;
     }
   }
 }
