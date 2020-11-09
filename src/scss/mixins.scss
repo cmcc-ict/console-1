@@ -105,7 +105,7 @@
   color: $color;
 }
 
-@mixin TypographySymbolText($color: $light-color01) {
+@mixin TypographySymbolText($color: $dark-color06) {
   font-family: $font-family;
   font-size: $size-small;
   font-weight: $font-bold;

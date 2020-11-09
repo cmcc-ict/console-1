@@ -45,7 +45,7 @@
   //width: 150px;
   height: 30px;
   vertical-align: middle;
-  padding-left: 10px;
+  padding-left: 20px;
   //transform: translate(-50%, -50%);
 
   .inAppsPage & {
@@ -62,6 +62,9 @@
 
     & + button {
       margin-left: 12px !important;
+    }
+    .content{
+      color: $light-color01 !important;
     }
 
     .inAppsPage & {
