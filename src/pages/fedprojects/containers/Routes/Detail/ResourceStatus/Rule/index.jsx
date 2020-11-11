@@ -35,7 +35,7 @@ const Card = ({ gateway, rule, tls = {}, prefix }) => {
       ((protocol === 'http' && _port.nodePort !== 80) ||
         (protocol === 'https' && _port.nodePort !== 443))
     ) {
-      host = `${host}:${_port.nodePort}`
+      host = `${host}`
     }
   }
 
