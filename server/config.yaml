@@ -34,7 +34,7 @@ server:
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: KubeSphere
+  title: 资源管理平台
   description: ''
 
   version:
