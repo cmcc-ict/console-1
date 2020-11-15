@@ -34,7 +34,7 @@ server:
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: 资源管理平台
+  title: OneDEV|集成部署云
   description: ''
 
   version:
