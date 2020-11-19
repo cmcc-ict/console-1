@@ -59,7 +59,7 @@
 
   button {
     padding: 5px 11px !important;
-    color: #f9fbfd !important;
+    color: #f9fbfd;
     & + button {
       margin-left: 12px !important;
     }
@@ -68,6 +68,9 @@
 
       &:hover {
         color: $text-color;
+      }
+      &:focus {
+        color:#f9fbfd;
       }
     }
   }
