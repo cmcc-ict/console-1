@@ -63,14 +63,14 @@
     & + button {
       margin-left: 12px !important;
     }
+    &:focus {
+      color:#f9fbfd !important;
+    }
     .inAppsPage & {
       color: white;
 
       &:hover {
         color: $text-color;
-      }
-      &:focus {
-        color:#f9fbfd;
       }
     }
   }
