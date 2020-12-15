@@ -66,7 +66,7 @@ export default {
   'Please add at least one routing rule.': '请至少添加一个路由规则',
 
   UNABLE_TO_ACCESS_TIP:
-    '● 请确保您设置的域名可以解析到访问入口的 IP 地址;<br/>● 如果在私有云环境中，请修改本地的 host 文件，并通过 域名+节点端口 的方式来访问;<br/>● 通过通配 DNS 访问，将域名修改为 hostname + 网关地址 + nip.io，然后可以通过 hostname.网关地址.nip.io:节点端口 的形式来访问服务;<br/>● 如果通过域名访问被拦截，请确认您的域名是真实而且已经备案。',
+    '● 请根据各环境配置域名规则：<br />● 开发环境：*.项目名-网关NodePort端口.p.onecode.ict.cmcc<br />● 测试环境：*.项目名-网关NodePort端口.t.onecode.ict.cmcc',
 
   NO_INTERNET_ACCESS_TIP:
     '当前项目中没有找到可用的网关地址，因此您无法设置应用路由。请联系您的项目管理员在 <strong>高级设置</strong> 中设置外网访问方式',
@@ -75,7 +75,7 @@ export default {
   RULE_SETTING_MODE_AUTO:
     '通过通配 DNS 访问，将域名修改为 hostname + 网关地址 + nip.io，然后可以通过 hostname.网关地址.nip.io:节点端口 的形式来访问服务;<br/>请确保所在网络环境可以正常访问网关地址。',
   RULE_SETTING_MODE_SPECIFY:
-    '请确保您设置的域名可以解析到访问入口的 IP 地址;<br/>如果在私有云环境中，请修改本地的 host 文件，并通过 域名+节点端口 的方式来访问',
+    '● 请根据各环境配置域名规则：<br />● 开发环境：*.项目名-网关NodePort端口.p.onecode.ict.cmcc<br />● 测试环境：*.项目名-网关NodePort端口.t.onecode.ict.cmcc',
 
   GATEWAY_SERVICE_MESH_STATUS_ON: '已开启',
   GATEWAY_SERVICE_MESH_STATUS_OFF: '未开启',
