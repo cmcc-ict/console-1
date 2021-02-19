@@ -202,8 +202,8 @@ export default class Members extends React.Component {
         <Table
           {...tableProps}
           searchType="name"
-          tableActions={this.tableActions}
-          itemActions={this.itemActions}
+          // tableActions={this.tableActions}
+          // itemActions={this.itemActions}
           columns={this.getColumns()}
         />
       </ListPage>
