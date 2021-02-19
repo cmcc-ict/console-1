@@ -102,6 +102,7 @@ export default class Members extends React.Component {
 
   get tableActions() {
     const { routing, getData, trigger, tableProps } = this.props
+    console.log(tableProps)
     return {
       ...tableProps.tableActions,
       actions: [
