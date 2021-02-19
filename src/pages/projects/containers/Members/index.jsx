@@ -66,39 +66,39 @@ export default class Members extends React.Component {
     return globals.user.username !== record.name
   }
 
-  get itemActions() {
-    const { getData, trigger } = this.props
-    return [
-      {
-        key: 'modify',
-        icon: 'pen',
-        text: t('Modify Member Role'),
-        action: 'edit',
-        show: this.showAction,
-        onClick: item =>
-          trigger('member.edit', {
-            detail: item,
-            ...this.props.match.params,
-            roles: toJS(this.roleStore.list.data),
-            role: item.role,
-            success: getData,
-          }),
-      },
-      {
-        key: 'delete',
-        icon: 'trash',
-        text: t('Remove Member'),
-        action: 'delete',
-        show: this.showAction,
-        onClick: item =>
-          trigger('member.remove', {
-            detail: item,
-            success: getData,
-            ...this.props.match.params,
-          }),
-      },
-    ]
-  }
+  // get itemActions() {
+  //   const { getData, trigger } = this.props
+  //   return [
+  //     {
+  //       key: 'modify',
+  //       icon: 'pen',
+  //       text: t('Modify Member Role'),
+  //       action: 'edit',
+  //       show: this.showAction,
+  //       onClick: item =>
+  //         trigger('member.edit', {
+  //           detail: item,
+  //           ...this.props.match.params,
+  //           roles: toJS(this.roleStore.list.data),
+  //           role: item.role,
+  //           success: getData,
+  //         }),
+  //     },
+  //     {
+  //       key: 'delete',
+  //       icon: 'trash',
+  //       text: t('Remove Member'),
+  //       action: 'delete',
+  //       show: this.showAction,
+  //       onClick: item =>
+  //         trigger('member.remove', {
+  //           detail: item,
+  //           success: getData,
+  //           ...this.props.match.params,
+  //         }),
+  //     },
+  //   ]
+  // }
 
   get tableActions() {
     const { routing, getData, trigger, tableProps } = this.props
