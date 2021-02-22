@@ -158,7 +158,7 @@ export default class Roles extends React.Component {
         <Table
           {...tableProps}
           emptyProps={this.emptyProps}
-          tableActions={this.tableActions}
+          // tableActions={this.tableActions}
           itemActions={this.itemActions}
           columns={this.getColumns()}
           searchType="name"
