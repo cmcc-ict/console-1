@@ -352,7 +352,7 @@ client:
                 clusterModule: network,
                 authKey: 'project-settings',
               }
-            - { name: roles, title: Project Roles }
+#            - { name: roles, title: Project Roles }
             - { name: members, title: Project Members }
             - {
                 name: advanced,
