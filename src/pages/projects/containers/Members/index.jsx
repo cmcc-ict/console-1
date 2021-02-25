@@ -22,7 +22,8 @@ import { toJS } from 'mobx'
 import { Avatar, Status } from 'components/Base'
 import Banner from 'components/Cards/Banner'
 import { withProjectList, ListPage } from 'components/HOCs/withList'
-import Table from 'components/Tables/List'
+// eslint-disable-next-line import/no-unresolved
+import Table from 'components/Tables/CustomList'
 
 import { getLocalTime } from 'utils'
 
@@ -66,84 +67,51 @@ export default class Members extends React.Component {
     return globals.user.username !== record.name
   }
 
-  // get itemActions() {
-  //   const { getData, trigger } = this.props
-  //   return [
-  //     {
-  //       key: 'modify',
-  //       icon: 'pen',
-  //       text: t('Modify Member Role'),
-  //       action: 'edit',
-  //       show: this.showAction,
-  //       onClick: item =>
-  //         trigger('member.edit', {
-  //           detail: item,
-  //           ...this.props.match.params,
-  //           roles: toJS(this.roleStore.list.data),
-  //           role: item.role,
-  //           success: getData,
-  //         }),
-  //     },
-  //     {
-  //       key: 'delete',
-  //       icon: 'trash',
-  //       text: t('Remove Member'),
-  //       action: 'delete',
-  //       show: this.showAction,
-  //       onClick: item =>
-  //         trigger('member.remove', {
-  //           detail: item,
-  //           success: getData,
-  //           ...this.props.match.params,
-  //         }),
-  //     },
-  //   ]
-  // }
-
   get tableActions() {
     const { routing, getData, trigger, tableProps } = this.props
-    console.log(tableProps)
+    // const { tableProps } = this.props
     return {
       ...tableProps.tableActions,
-      actions: [
-        {
-          key: 'invite',
-          type: 'control',
-          text: t('Invite Member'),
-          action: 'create',
-          onClick: () =>
-            trigger('member.invite', {
-              ...this.props.match.params,
-              roles: toJS(this.roleStore.list.data),
-              roleModule: this.roleStore.module,
-              workspace: get(this.props, 'projectStore.detail.workspace'),
-              title: t('Invite Members to the Project'),
-              desc: t('INVITE_MEMBER_DESC'),
-              searchPlaceholder: t('INVITE_MEMBER_SEARCH_PLACEHODLER'),
-              success: routing.query,
-            }),
-        },
-      ],
-      selectActions: [
-        {
-          key: 'delete',
-          type: 'danger',
-          text: t('Remove Members'),
-          action: 'delete',
-          onClick: () =>
-            trigger('member.remove.batch', {
-              success: getData,
-              ...this.props.match.params,
-            }),
-        },
-      ],
-      getCheckboxProps: record => ({
-        disabled: !this.showAction(record),
-        name: record.name,
-      }),
+      // actions: [
+      //   {
+      //     key: 'invite',
+      //     type: 'control',
+      //     text: t('Invite Member'),
+      //     action: 'create',
+      //     onClick: () =>
+      //       trigger('member.invite', {
+      //         ...this.props.match.params,
+      //         roles: toJS(this.roleStore.list.data),
+      //         roleModule: this.roleStore.module,
+      //         workspace: get(this.props, 'projectStore.detail.workspace'),
+      //         title: t('Invite Members to the Project'),
+      //         desc: t('INVITE_MEMBER_DESC'),
+      //         searchPlaceholder: t('INVITE_MEMBER_SEARCH_PLACEHODLER'),
+      //         success: routing.query,
+      //       }),
+      //   },
+      // ],
+      // selectActions: [
+      //   {
+      //     key: 'delete',
+      //     type: 'danger',
+      //     text: t('Remove Members'),
+      //     action: 'delete',
+      //     onClick: () =>
+      //       trigger('member.remove.batch', {
+      //         success: getData,
+      //         ...this.props.match.params,
+      //       }),
+      //   },
+      // ],
+      // getCheckboxProps: record => ({
+      //   disabled: !this.showAction(record),
+      //   name: record.name,
+      // }),
       emptyProps: {
         desc: t('INVITE_MEMBER_DESC'),
       },
+      selectActions: [],
     }
   }
 
@@ -203,7 +171,7 @@ export default class Members extends React.Component {
         <Table
           {...tableProps}
           searchType="name"
-          // tableActions={this.tableActions}
+          tableActions={this.tableActions}
           // itemActions={this.itemActions}
           columns={this.getColumns()}
         />
