@@ -37,6 +37,10 @@ class Dashboard extends React.Component {
       if (globals.user.globalrole === 'user-manager') {
         return this.routing.push(`/access/accounts`)
       }
+      
+      if (globals.user.globalrole === 'leaders') {
+        return this.routing.push(`/clusters/default/overview`)
+      }
 
       if (globals.app.getActions({ module: 'workspaces' }).includes('create')) {
         return this.routing.push(`/access/workspaces`)
