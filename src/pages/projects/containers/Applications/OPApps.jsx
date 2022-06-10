@@ -34,7 +34,7 @@ import Banner from './Banner'
   name: 'Application',
 })
 export default class OPApps extends React.Component {
-  type = 'template'
+  type = 'composing'
 
   get prefix() {
     const { workspace, cluster, namespace } = this.props.match.params

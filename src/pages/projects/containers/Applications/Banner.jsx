@@ -65,10 +65,10 @@ export default class AppBanner extends Component {
       value: type,
       onChange: this.handleTabChange,
       options: [
-        {
-          value: 'template',
-          label: t('App Templates'),
-        },
+        // {
+        //   value: 'template',
+        //   label: t('App Templates'),
+        // },
         {
           value: 'composing',
           label: t('Composing App'),

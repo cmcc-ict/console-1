@@ -46,7 +46,12 @@ class Header extends React.Component {
   handleDocumentLinkClick = (e, key) => {
     window.open(key)
   }
-
+  handleLinkClickToNew = () => {
+    window.open(
+      'http://project.onecode.ict.cmcc/plugins/servlet/oauth/auth?return_to=http://project.onecode.ict.cmcc/servicedesk/customer/portal/2'
+    )
+    // window.open('http://project.onecode.ict.cmcc/servicedesk/customer/portal/2')
+  }
   renderDocumentList() {
     return (
       <Menu onClick={this.handleDocumentLinkClick} data-test="header-docs">
@@ -94,7 +99,7 @@ class Header extends React.Component {
                 {t('Platform')}
               </Button>
             )}
-            {globals.app.enableAppStore && (
+            {/* {globals.app.enableAppStore && (
               <Button
                 type="flat"
                 icon="appcenter"
@@ -105,7 +110,7 @@ class Header extends React.Component {
               >
                 {t('App Store')}
               </Button>
-            )}
+            )} */}
             <Button
               type="flat"
               icon="dashboard"
@@ -119,6 +124,11 @@ class Header extends React.Component {
           </div>
         )}
         <div className={styles.right}>
+          <div className={styles.navs}>
+            <Button type="flat" onClick={this.handleLinkClickToNew}>
+              {t('WORK_ORDERS')}
+            </Button>
+          </div>
           {this.isLoggedIn && (
             <Dropdown content={this.renderDocumentList()}>
               <Button type="flat" icon="documentation" />

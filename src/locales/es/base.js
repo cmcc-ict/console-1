@@ -519,4 +519,5 @@ export default {
 
   EVENT_AGE: 'Age',
   EVENT_FROM: 'From',
+  WORK_ORDERS: 'Nueva orden de trabajo'
 }

@@ -545,4 +545,5 @@ export default {
 
   EVENT_AGE: '发生时间',
   EVENT_FROM: '来源',
+  WORK_ORDERS: '发起工单',
 }

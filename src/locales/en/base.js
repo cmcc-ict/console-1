@@ -544,4 +544,5 @@ export default {
   DEVELOPER_DESC: 'Raise a question in the developer community to get help.',
   API_DOCS_DESC: 'The most comprehensive KubeSphere API documentation.',
   GITHUB_ISSUES_DESC: 'Raise an issue in GitHub to get help.',
+  WORK_ORDERS: 'WorkOrders',
 }

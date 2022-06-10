@@ -152,6 +152,7 @@ export default [
   },
 ]
 
-function getDefaultAppType() {
-  return globals.app.enableAppStore ? 'template' : 'composing'
+function getDefaultAppType () {
+  //return globals.app.enableAppStore ? 'composing' : 'composing'
+  return 'composing'
 }

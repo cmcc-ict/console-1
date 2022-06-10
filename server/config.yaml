@@ -244,23 +244,23 @@ client:
             ksModule: devops,
             skipAuth: true,
           }
-        - name: apps
-          title: Apps Management
-          icon: appcenter
-          children:
-            - {
-                name: apps,
-                title: App Templates,
-                icon: appcenter,
-                authKey: app-templates,
-                ksModule: openpitrix,
-              }
-            - {
-                name: repos,
-                title: App Repos,
-                authKey: 'app-repos',
-                ksModule: openpitrix,
-              }
+        # - name: apps
+        #   title: Apps Management
+        #   icon: appcenter
+        #   children:
+        #     - {
+        #         name: apps,
+        #         title: App Templates,
+        #         icon: appcenter,
+        #         authKey: app-templates,
+        #         ksModule: openpitrix,
+        #       }
+        #     - {
+        #         name: repos,
+        #         title: App Repos,
+        #         authKey: 'app-repos',
+        #         ksModule: openpitrix,
+        #       }
         - name: management
           title: Workspace Settings
           icon: cogwheel
