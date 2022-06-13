@@ -99,18 +99,7 @@ class Header extends React.Component {
                 {t('Platform')}
               </Button>
             )}
-            {/* {globals.app.enableAppStore && (
-              <Button
-                type="flat"
-                icon="appcenter"
-                onClick={this.handleLinkClick('/apps')}
-                className={classnames({
-                  [styles.active]: location.pathname === '/apps',
-                })}
-              >
-                {t('App Store')}
-              </Button>
-            )} */}
+  
             <Button
               type="flat"
               icon="dashboard"
