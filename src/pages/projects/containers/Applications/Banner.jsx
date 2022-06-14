@@ -92,10 +92,10 @@ export default class AppBanner extends Component {
 
   get tips() {
     return [
-      {
-        title: t('Application Type'),
-        description: t('APPLICATION_TYPE_DESC'),
-      },
+      // {
+      //   title: t('Application Type'),
+      //   description: t('APPLICATION_TYPE_DESC'),
+      // },
       {
         title: t('HOW_TO_USE_APPLICATION_GOVE_Q'),
         description: t('HOW_TO_USE_APPLICATION_GOVE_A'),
