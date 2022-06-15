@@ -45,7 +45,7 @@ client:
   reposUrl: https://github.com/kubesphere/kubesphere
   slackUrl: https://kubesphere.slack.com
   documents:
-    url: https://v3-0.docs.kubesphere.io/docs
+    url: http://wiki.onecode.ict.cmcc/pages/viewpage.action?pageId=1314557
     api: https://v3-0.docs.kubesphere.io/docs/api-reference/api-docs/
 
   # current support lanaguages
